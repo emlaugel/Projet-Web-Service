@@ -5,38 +5,39 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.jsp.PageContext;
+
 import java.io.IOException;
 import java.util.List;
 
+import javax.swing.JButton;
+
 import bdd.Base;
 
-public class musiques extends HttpServlet {
+
+public class produits extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private Base b;   
-    private int rows;
+	private Base b;
+	private int rows;
 	
-    public musiques() {
+    public produits() {
         super();
         b = new Base();
     }
-
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//List<String> musiques = b.recupererMusiques();
-		//rows = musiques.size();
+		b.createdatabase();
+
+		List<String> produits = b.recupererProduits();
+		rows = produits.size();
 		
 		request.setAttribute("rows", rows);
-		//request.setAttribute("musiques", musiques);
+		request.setAttribute("produits", produits);
 		
-		String nom = request.getParameter("musique");
-		
-		//b.delMusique(nom);
-		
-		this.getServletContext().getRequestDispatcher("/WEB-INF/musiques.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/produits.jsp").forward(request, response);
 	}
-
 }

@@ -29,7 +29,7 @@ public class ajouter_musique extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		b.createdatabase();
-		
+		/*
 		List<String> artistes = b.recupererArtistes();
 		request.setAttribute("artistes", artistes);
 
@@ -78,6 +78,6 @@ public class ajouter_musique extends HttpServlet {
 			pw.close(); 
 			
 			b.addMusique(nom, album, duree, sortie, resultat_artiste, resultat_genre, lyrics);
-		}		
+		}	*/	
 	}
 }

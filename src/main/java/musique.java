@@ -28,7 +28,7 @@ public class musique extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		musique = request.getParameter("parametre");
-		
+		/*
 		List<String> not_found_testList = b.recupererMusiques(); 
 		
 		if (not_found_testList.contains(musique))
@@ -61,6 +61,6 @@ public class musique extends HttpServlet {
 		else {
 			response.sendRedirect("not_found");
 		}
-	
+		 */
 	}
 }

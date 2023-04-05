@@ -28,21 +28,18 @@ public class redirection extends HttpServlet {
 		
 		request.setAttribute("valeur", valeur);
 		
-		if (valeur.equals("artiste"))
+		if (valeur.equals("produit"))
 		{
-			request.setAttribute("URL", "artistes");
-			b.delArtiste(parametre);
+			request.setAttribute("URL", "produits");
+			b.delProduit(parametre);
 		}
+		/*
 		else if (valeur.equals("genre"))
 		{
 			request.setAttribute("URL", "genres");
 			b.delGenre(parametre);
-		}
-		else if (valeur.equals("musique"))
-		{
-			request.setAttribute("URL", "musiques");
-			b.delMusique(parametre);
-		}
+		}*/
+		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/redirection.jsp").forward(request, response);
 	}
 

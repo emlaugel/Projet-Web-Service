@@ -53,8 +53,8 @@ public class modifier_musique extends HttpServlet {
 		
 		String lyrics = request.getParameter("lyrics");
 		
-		b.delMusique(parametre);
-		b.addMusique(nom, album, duree, sortie, resultat_artiste, resultat_genre, lyrics);
+		//b.delMusique(parametre);
+		//b.addMusique(nom, album, duree, sortie, resultat_artiste, resultat_genre, lyrics);
 		
 		
 		response.sendRedirect("musique?parametre=" + nom);
@@ -63,6 +63,7 @@ public class modifier_musique extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		parametre = request.getParameter("parametre");		
 		
+		/*
 		List<String> artistes = b.recupererArtistes();
 		request.setAttribute("artistes", artistes);
 		
@@ -85,7 +86,7 @@ public class modifier_musique extends HttpServlet {
 		request.setAttribute("artiste", artiste);
 
 		request.setAttribute("lyrics", lyrics);
-		
+		*/
 		this.getServletContext().getRequestDispatcher("/WEB-INF/modifier_musique.jsp").forward(request, response);		
 	}
 
